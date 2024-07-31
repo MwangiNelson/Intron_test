@@ -32,7 +32,7 @@ const PopupModal: React.FC<PopupModalProps> = ({
   };
 
   return (
-    <div className="w-screen bg-black/10 h-screen fixed top-0 left-0 flex items-center justify-center">
+    <div className="w-screen bg-black/10 h-screen fixed top-0 left-0 flex items-center justify-center z-20">
       <div className="w-1/4 h-fit bg-white rounded-lg p-4 flex flex-col gap-4 items-center">
         {renderIcon()}
         <p className="text-lg text-center">{text}</p>

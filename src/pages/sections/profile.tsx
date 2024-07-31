@@ -47,7 +47,6 @@ const ProfileSection = () => {
   const schema = Yup.object().shape({
     username: Yup.string().required("Username is required"),
     email: Yup.string().required("Email is required").email("Invalid email"),
-    oldPassword: Yup.string(),
     newPassword: Yup.string(),
   });
 
@@ -128,18 +127,7 @@ const ProfileSection = () => {
             <div className="flex flex-row w-3/4 gap-2">
               <input
                 type="password"
-                className={`w-1/2 border-0 text-slate-500 font-bold border-b-2 py-2 px-2 rounded-none active:outline-0 bg-transparent ${
-                  errors.oldPassword ? "border-red-500" : "border-slate-400"
-                }`}
-                placeholder="Old Password"
-                {...register("oldPassword")}
-              />
-              {errors.oldPassword && (
-                <p className="text-red-500">{errors.oldPassword.message}</p>
-              )}
-              <input
-                type="password"
-                className={`w-1/2 border-0 text-slate-500 font-bold border-b-2 py-2 px-2 rounded-none active:outline-0 bg-transparent ${
+                className={`w-full border-0 text-slate-500 font-bold border-b-2 py-2 px-2 rounded-none active:outline-0 bg-transparent ${
                   errors.newPassword ? "border-red-500" : "border-slate-400"
                 }`}
                 placeholder="New Password"
